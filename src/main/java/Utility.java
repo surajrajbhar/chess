@@ -8,7 +8,7 @@ public class Utility {
     
     public static boolean isUpperBoundary(String position) {
         Set<String> boundariesSet = new HashSet<>(Arrays.asList(Constants.UPPER_BOUNDARIES));
-        if (!isValidPosition(position) || boundariesSet.contains(position)) {
+        if (boundariesSet.contains(position)) {
             return true;
         }
         return false;
@@ -16,7 +16,7 @@ public class Utility {
 
     public static boolean isLowerBoundary(String position) {
         Set<String> lowerBoundariesSet = new HashSet<>(Arrays.asList(Constants.LOWER_BOUNDARIES));
-        if (!isValidPosition(position) || lowerBoundariesSet.contains(position)) {
+        if (lowerBoundariesSet.contains(position)) {
             return true;
         }
         return false;
@@ -25,7 +25,7 @@ public class Utility {
     public static boolean isLeftBoundary(String position) {
         Set<String> leftBoundariesSet = new HashSet<>(Arrays.asList(Constants.LEFT_BOUNDARIES));
 
-        if (!isValidPosition(position) || leftBoundariesSet.contains(position)) {
+        if (leftBoundariesSet.contains(position)) {
             return true;
         }
         return false;
@@ -33,14 +33,14 @@ public class Utility {
 
     public static boolean isRightBoundary(String position) {
         Set<String> rightBoundariesSet = new HashSet<>(Arrays.asList(Constants.RIGHT_BOUNDARIES));
-        if (!isValidPosition(position) || rightBoundariesSet.contains(position)) {
+        if (rightBoundariesSet.contains(position)) {
             return true;
         }
         return false;
     }
 
     public static boolean isDiagonalBoundary(String position) {
-        if (!isValidPosition(position) || isLeftBoundary(position) || isRightBoundary(position) || isUpperBoundary(position) || isLowerBoundary(position)) {
+        if (isLeftBoundary(position) || isRightBoundary(position) || isUpperBoundary(position) || isLowerBoundary(position)) {
             return true;
         }
         return false;

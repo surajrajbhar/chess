@@ -10,6 +10,9 @@ public class MovementCalculator {
             for (int i = 1; i <= step; i++) {
                 secondChar = secondChar + 1;
                 String newPosition = String.format("%c%d", firstChar, secondChar);
+                if(!Utility.isValidPosition(newPosition)){
+                    break;
+                }
                 if (Utility.isUpperBoundary(newPosition)) {
                     movements.add(newPosition);
                     break;
@@ -28,6 +31,9 @@ public class MovementCalculator {
             for (int i = 0; i < step; i++) {
                 secondChar = secondChar - 1;
                 String newPosition = String.format("%c%d", firstChar, secondChar);
+                if(!Utility.isValidPosition(newPosition)){
+                    break;
+                }
                 if (Utility.isLowerBoundary(newPosition)) {
                     movements.add(newPosition);
                     break;
@@ -47,6 +53,9 @@ public class MovementCalculator {
             for (int i = 1; i <= step; i++) {
                 firstChar = (char) (firstChar - 1);
                 String newPosition = String.format("%c%c", firstChar, secondChar);
+                if(!Utility.isValidPosition(newPosition)){
+                    break;
+                }
                 if (Utility.isLeftBoundary(newPosition)) {
                     movements.add(newPosition);
                     break;
@@ -66,6 +75,9 @@ public class MovementCalculator {
             for (int i = 1; i <= step; i++) {
                 firstChar = (char) (firstChar + 1);
                 String newPosition = String.format("%c%c", firstChar, secondChar);
+                if(!Utility.isValidPosition(newPosition)){
+                    break;
+                }
                 if (Utility.isRightBoundary(newPosition)) {
                     movements.add(newPosition);
                     break;
@@ -86,6 +98,9 @@ public class MovementCalculator {
                 firstChar = (char) (firstChar - 1);
                 secondChar = secondChar + 1;
                 String newPosition = String.format("%c%d", firstChar, secondChar);
+                if(!Utility.isValidPosition(newPosition)){
+                    break;
+                }
                 if (Utility.isDiagonalBoundary(newPosition)) {
                     movements.add(newPosition);
                     break;
@@ -107,6 +122,9 @@ public class MovementCalculator {
                 firstChar = (char) (firstChar + 1);
                 secondChar = secondChar + 1;
                 String newPosition = String.format("%c%d", firstChar, secondChar);
+                if(!Utility.isValidPosition(newPosition)){
+                    break;
+                }
                 if (Utility.isDiagonalBoundary(newPosition)) {
                     movements.add(newPosition);
                     break;
@@ -127,6 +145,9 @@ public class MovementCalculator {
                 firstChar = (char) (firstChar - 1);
                 secondChar = secondChar - 1;
                 String newPosition = String.format("%c%d", firstChar, secondChar);
+                if(!Utility.isValidPosition(newPosition)){
+                    break;
+                }
                 if (Utility.isDiagonalBoundary(newPosition)) {
                     movements.add(newPosition);
                     break;
@@ -148,6 +169,9 @@ public class MovementCalculator {
                 firstChar = (char) (firstChar + 1);
                 secondChar = secondChar - 1;
                 String newPosition = String.format("%c%d", firstChar, secondChar);
+                if(!Utility.isValidPosition(newPosition)){
+                    break;
+                }
                 if (Utility.isDiagonalBoundary(newPosition)) {
                     movements.add(newPosition);
                     break;
@@ -181,6 +205,9 @@ public class MovementCalculator {
                 return new ArrayList<>();
         }
     }
+
+    // current: @7, @9, A7, A9, B7, B8, B9,
+    //          @7, @9, A7, A9, B7, B8, B9,
 
 
 }

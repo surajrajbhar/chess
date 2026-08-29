@@ -10,9 +10,13 @@ public class ChessPieceMovementTest {
     @Test
     public void testGetPieceMovement_Queen() {
         ChessPieceMovement chessPieceMovement = new ChessPieceMovement();
+        // Nearest-cell-first in every direction. The pre-refactor version reversed
+        // the LEFT/DOWN/DIAGONAL_NE/DIAGONAL_SW segments only (a copy-paste
+        // artifact of Collections.reverse() being added to some of the eight
+        // duplicated per-direction methods but not others) -- see MovementCalculator.
         List<String> expectedMovements = Arrays.asList(
-            "A4", "B4", "C4", "D4", "F4", "G4", "H4", "E1", "E2", "E3", "E5", "E6", "E7", "E8",
-            "A8", "B7", "C6", "D5", "F3", "G2", "H1", "B1", "C2", "D3", "F5", "G6", "H7"
+            "D4", "C4", "B4", "A4", "F4", "G4", "H4", "E3", "E2", "E1", "E5", "E6", "E7", "E8",
+            "D5", "C6", "B7", "A8", "F3", "G2", "H1", "D3", "C2", "B1", "F5", "G6", "H7"
         );
         List<String> actualMovements = chessPieceMovement.getPieceMovement("Queen, E4");
         assertEquals(expectedMovements, actualMovements);
